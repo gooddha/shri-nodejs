@@ -1,0 +1,28 @@
+{
+  "name": "shri-nodejs",
+  "version": "1.0.0",
+  "description": "home task for shri on nodejs lesson",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gooddha/shri-nodejs.git"
+  },
+  "keywords": [
+    "shri",
+    "nodejs"
+  ],
+  "author": "gooddha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gooddha/shri-nodejs/issues"
+  },
+  "homepage": "https://github.com/gooddha/shri-nodejs#readme"
+}
