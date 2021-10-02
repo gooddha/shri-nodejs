@@ -16,7 +16,7 @@ const getList = (req, res) => {
           date: fileStat.ctime
         }
       })
-      res.send({ list });
+      res.json(list);
     }
   });
 }
