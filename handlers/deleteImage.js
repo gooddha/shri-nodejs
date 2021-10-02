@@ -1,8 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 const { uploadPath } = require('../utils/upload');
 
 const deleteImage = (req, res) => {
-  const file = `${uploadPath}\\${req.params.id}.jpeg`;
+  const file = path.resolve(uploadPath, req.params.id + '.jpeg');
 
   fs.unlink(file, (err) => {
     if (err) {
