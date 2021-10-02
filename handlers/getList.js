@@ -6,7 +6,17 @@ const getList = (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(files);
+      const list = files.map(fileName => {
+        const filePath = uploadPath + '\\' + fileName;
+        let fileStat = fs.statSync(filePath);
+
+        return {
+          id: fileName.split('.')[0],
+          size: fileStat.size,
+          date: fileStat.ctime
+        }
+      })
+      res.send({ list });
     }
   });
 }

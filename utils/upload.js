@@ -1,6 +1,14 @@
+const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { nanoid } = require('nanoid');
+
+const uploadPath = path.resolve(__dirname, '../upload');
+
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath);
+};
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -14,5 +22,5 @@ const storage = multer.diskStorage({
 
 module.exports = {
   upload: multer({ storage: storage }),
-  uploadPath: path.resolve(__dirname, '../upload')
+  uploadPath
 }
