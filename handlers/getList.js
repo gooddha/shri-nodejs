@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const { uploadPath } = require('../utils/upload');
 
@@ -7,7 +8,7 @@ const getList = (req, res) => {
       res.send(err);
     } else {
       const list = files.map(fileName => {
-        const filePath = uploadPath + '\\' + fileName;
+        const filePath = path.resolve(uploadPath, fileName);
         let fileStat = fs.statSync(filePath);
 
         return {
