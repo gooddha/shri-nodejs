@@ -1,3 +1,4 @@
+const path = require('path');
 const multer = require('multer');
 const { nanoid } = require('nanoid');
 
@@ -12,5 +13,6 @@ const storage = multer.diskStorage({
 
 
 module.exports = {
-  upload: multer({ storage: storage })
+  upload: multer({ storage: storage }),
+  uploadPath: path.resolve(__dirname, '../upload')
 }
