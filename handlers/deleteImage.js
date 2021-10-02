@@ -9,7 +9,7 @@ const deleteImage = (req, res) => {
     if (err) {
       res.status(400).send(`There is no file with id ${req.params.id} \n ${err}`);
     } else {
-      res.send(`File ${req.params.id}.jpeg succesfully deleted`);
+      res.json({ id: req.params.id });
     }
   });
 };
